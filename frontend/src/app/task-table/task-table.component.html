@@ -1,0 +1,64 @@
+<div class="table-container">
+  <div class="button-container">
+    <button mat-raised-button color="primary" (click)="onSave()">
+      Create New Task
+    </button>
+  </div>
+
+  <div class="card">
+    <table mat-table [dataSource]="tasks" class="mat-table">
+      <!-- Task Name Column -->
+      <ng-container matColumnDef="name">
+        <th mat-header-cell *matHeaderCellDef class="name-column">Task Name</th>
+        <td mat-cell *matCellDef="let task" class="name-column">
+          {{ task.name }}
+        </td>
+      </ng-container>
+
+      <!-- Start Date Column -->
+      <ng-container matColumnDef="startDate">
+        <th mat-header-cell *matHeaderCellDef class="start-date-column">
+          Start Date
+        </th>
+        <td mat-cell *matCellDef="let task" class="start-date-column">
+          {{ task.startTime }}
+        </td>
+      </ng-container>
+
+      <!-- End Date Column -->
+      <ng-container matColumnDef="endDate">
+        <th mat-header-cell *matHeaderCellDef class="end-date-column">
+          End Date
+        </th>
+        <td mat-cell *matCellDef="let task" class="end-date-column">
+          {{ task.endTime }}
+        </td>
+      </ng-container>
+
+      <!-- Duration Column -->
+      <ng-container matColumnDef="duration">
+        <th mat-header-cell *matHeaderCellDef class="duration-column">
+          Duration
+        </th>
+        <td mat-cell *matCellDef="let task" class="duration-column">
+          {{ task.duration }} min
+        </td>
+      </ng-container>
+
+      <!-- Edit Button Column -->
+      <ng-container matColumnDef="edit">
+        <th mat-header-cell *matHeaderCellDef class="edit-column">Edit</th>
+        <td mat-cell *matCellDef="let task" class="edit-column">
+          <button mat-icon-button color="primary" (click)="onEdit(task)">
+            <mat-icon>edit</mat-icon>
+          </button>
+        </td>
+      </ng-container>
+
+      <!-- Header Row -->
+      <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+      <!-- Data Rows -->
+      <tr mat-row *matRowDef="let row; columns: displayedColumns"></tr>
+    </table>
+  </div>
+</div>

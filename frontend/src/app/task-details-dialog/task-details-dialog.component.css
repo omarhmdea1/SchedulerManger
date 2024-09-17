@@ -1,0 +1,36 @@
+.task-title {
+  text-align: center;
+  font-size: 1.5rem;
+  font-weight: bold;
+  color: #3f51b5;
+}
+
+.task-details-content {
+  padding: 10px 0;
+  margin: 20px;
+}
+
+.task-detail-item {
+  align-items: center;
+  padding: 10px;
+}
+
+.task-detail-label {
+  flex: 1;
+  font-size: 1.1rem;
+  color: #555;
+  padding-right: 5px;
+}
+
+.task-detail-value {
+  font-size: 1.1rem;
+  color: #000;
+}
+
+.mat-dialog-actions {
+  margin-top: 15px;
+}
+
+.mat-icon {
+  margin-right: 10px;
+}

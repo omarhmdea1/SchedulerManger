@@ -1,0 +1,49 @@
+/* edit-task-form.component.css */
+.dialog-container {
+  display: flex;
+  flex-direction: column;
+}
+
+mat-form-field {
+  width: 100%;
+}
+
+mat-form-field .mat-form-field-infix {
+  margin-bottom: 16px;
+}
+
+mat-dialog-actions {
+  display: flex;
+  justify-content: flex-start;
+  gap: 8px;
+}
+
+button {
+  min-width: 100px;
+  background-color: #6f42c1;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  padding: 8px 16px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+button:hover {
+  background-color: #5a2a8b;
+}
+
+.cancel {
+  margin-left: 15px;
+}
+
+button:hover {
+  background-color: #5a2a8b;
+}
+
+button:active {
+  background-color: #4c1a6f;
+}
+.mat-mdc-button:not(:disabled) {
+  color: white;
+}

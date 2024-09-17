@@ -1,0 +1,101 @@
+<h1 mat-dialog-title>Add Task</h1>
+
+<!-- <div mat-dialog-content>
+  <mat-form-field appearance="fill">
+    <mat-label>Task Name</mat-label>
+    <input matInput [(ngModel)]="taskName" placeholder="Enter task name" />
+  </mat-form-field>
+
+  <mat-form-field appearance="fill">
+    <mat-label>Start Date</mat-label>
+    <input matInput [matDatepicker]="startPicker" [(ngModel)]="startDate" />
+    <mat-datepicker-toggle
+      matSuffix
+      [for]="startPicker"
+    ></mat-datepicker-toggle>
+    <mat-datepicker #startPicker></mat-datepicker>
+  </mat-form-field>
+
+  <mat-form-field appearance="fill">
+    <mat-label>End Date</mat-label>
+    <input matInput [matDatepicker]="endPicker" [(ngModel)]="endDate" />
+    <mat-datepicker-toggle matSuffix [for]="endPicker"></mat-datepicker-toggle>
+    <mat-datepicker #endPicker></mat-datepicker>
+  </mat-form-field>
+
+  <mat-form-field appearance="fill">
+    <mat-label>Start Time</mat-label>
+    <input matInput type="time" [(ngModel)]="startTime" />
+  </mat-form-field>
+
+  <mat-form-field appearance="fill">
+    <mat-label>Duration (hours)</mat-label>
+    <input
+      matInput
+      type="number"
+      [(ngModel)]="duration"
+      placeholder="Enter duration in hours"
+    />
+  </mat-form-field>
+
+  <mat-form-field appearance="fill">
+    <mat-label>Repeat Every (days)</mat-label>
+    <input
+      matInput
+      type="number"
+      [(ngModel)]="repeatEvery"
+      placeholder="Enter number of days"
+    />
+  </mat-form-field>
+</div>
+
+<div mat-dialog-actions>
+  <button mat-button class="cancel" (click)="onClose()">Cancel</button>
+  <button
+    mat-button
+    [mat-dialog-close]="{
+      taskName: taskName,
+      startDate: startDate,
+      startTime: startTime,
+      endDate: endDate,
+      duration: duration,
+      repeatEvery: repeatEvery
+    }"
+  >
+    Save
+  </button>
+</div> -->
+
+<div mat-dialog-content>
+  <form [formGroup]="addTaskForm" class="form-container">
+    <mat-form-field appearance="fill">
+      <mat-label>Task Name</mat-label>
+      <input matInput formControlName="name" placeholder="Enter task name" />
+    </mat-form-field>
+
+    <mat-form-field appearance="fill">
+      <mat-label>Start Date and Time</mat-label>
+      <input matInput type="datetime-local" formControlName="startTime" />
+    </mat-form-field>
+
+    <mat-form-field appearance="fill">
+      <mat-label>End Date</mat-label>
+      <input matInput type="date" formControlName="endTime" />
+    </mat-form-field>
+
+    <mat-form-field appearance="fill">
+      <mat-label>Duration (min)</mat-label>
+      <input matInput type="number" formControlName="duration" />
+    </mat-form-field>
+
+    <mat-form-field appearance="fill">
+      <mat-label>Eepeat Every (days)</mat-label>
+      <input matInput type="number" formControlName="repeatEvery" />
+    </mat-form-field>
+  </form>
+</div>
+
+<mat-dialog-actions>
+  <button mat-button class="cancel" (click)="onCancel()">Cancel</button>
+  <button mat-button (click)="onSave()">Save</button>
+</mat-dialog-actions>

@@ -1,0 +1,28 @@
+<h1 mat-dialog-title class="task-title">Task Details</h1>
+
+<div mat-dialog-content class="task-details-content">
+  <mat-divider></mat-divider>
+
+  <div class="task-detail-item">
+    <mat-icon color="primary">assignment</mat-icon>
+    <span class="task-detail-label"><strong>Title:</strong></span>
+    <span class="task-detail-value">{{ data.name }}</span>
+  </div>
+
+  <div class="task-detail-item">
+    <mat-icon color="primary">schedule</mat-icon>
+    <span class="task-detail-label"><strong>Start Time:</strong></span>
+    <span class="task-detail-value">{{ data.startTime }}</span>
+  </div>
+
+  <div class="task-detail-item">
+    <mat-icon color="primary">event</mat-icon>
+    <span class="task-detail-label"><strong>End Time:</strong></span>
+    <span class="task-detail-value">{{ data.endTime }}</span>
+  </div>
+  <mat-divider></mat-divider>
+</div>
+
+<div mat-dialog-actions align="end">
+  <button mat-raised-button color="#555" mat-dialog-close>Close</button>
+</div>
